@@ -23,18 +23,20 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>Umove P-bils System</TextBlock>
         <TextBlock FontSize="50" RenderTransformOrigin="1.029,1.426" Grid.ColumnSpan="4" Margin="22,258,16,-216"><LineBreak />Tryk på det grønne felt når du skal UD.<LineBreak />Tryk på det røde felt når du er kommet hjem.</TextBlock>
-        <Button Margin="465,871,59,93" Content="AFLEVER BIL" Grid.ColumnSpan="4" FontSize="90">
+        <Button Margin="55,910,21,54" Content="AFLEVER BIL" FontSize="90" Cursor="Hand" Grid.ColumnSpan="2">
             <Button.Height>300</Button.Height>
             <Button.Width>500</Button.Width>
             <Button.Foreground>White</Button.Foreground>
             <Button.Background>Red</Button.Background>
         </Button>
-        <Button Margin="60,521,16,443" Content="TAG BIL" Grid.ColumnSpan="2" FontSize="90">
+        <Image Source="bin/images/IN.BMP" Margin="0,428,0,-429" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
+        <Button Margin="55,556,21,408" Content="TAG BIL" Grid.ColumnSpan="2" FontSize="90" Cursor="Hand">
             <Button.Height>300</Button.Height>
             <Button.Width>500</Button.Width>
             <Button.Foreground>White</Button.Foreground>
             <Button.Background>Green</Button.Background>
         </Button>
+        <Image Source="bin/images/OUT.BMP" Margin="0,56,17,-57" HorizontalAlignment="Right" Width="431" Grid.Column="3"/>
     </Grid>
 
 
