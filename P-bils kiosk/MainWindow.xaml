@@ -29,14 +29,14 @@
             <Button.Foreground>White</Button.Foreground>
             <Button.Background>Red</Button.Background>
         </Button>
-        <Image Source="bin/images/IN.BMP" Margin="0,428,0,-429" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
+        <Image Source="images/IN.BMP" Margin="0,428,0,-429" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
         <Button Margin="55,556,21,408" Content="TAG BIL" Grid.ColumnSpan="2" FontSize="90" Cursor="Hand">
             <Button.Height>300</Button.Height>
             <Button.Width>500</Button.Width>
             <Button.Foreground>White</Button.Foreground>
             <Button.Background>Green</Button.Background>
         </Button>
-        <Image Source="bin/images/OUT.BMP" Margin="0,56,17,-57" HorizontalAlignment="Right" Width="431" Grid.Column="3"/>
+        <Image Source="images/OUT.BMP" Margin="0,56,17,-57" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
     </Grid>
 
 

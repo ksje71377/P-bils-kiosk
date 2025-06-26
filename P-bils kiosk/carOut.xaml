@@ -1,0 +1,49 @@
+﻿<Window x:Class="P_bils_kiosk.carOut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P_bils_kiosk"
+        mc:Ignorable="d"
+        Title="Chauffør tager en bil inde fra garagen og kører ud på ruten" Height="500" Width="500">
+    <Grid>
+        <TextBlock FontSize="25">Chauffør tager en bil inde fra garagen<LineBreak /> og kører ud på ruten<LineBreak /></TextBlock>
+        <TextBlock FontSize="15" Margin="10,97,323,371">SKRIV dit CHF nr:</TextBlock>
+        <TextBox Name="SendName" Margin="10,132,390,325"/>
+        <TextBlock FontSize="15" Margin="10,164,313,291">VÆLG bilen du har taget:</TextBlock>
+        <ComboBox Name="ChoiceCar" Margin="10,198,358,264">
+            <ComboBoxItem Content="Vælg bilen her" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Bil 1" />
+            <ComboBoxItem Content="Bil 5" />
+            <ComboBoxItem Content="Bil 3" />
+            <ComboBoxItem Content="Bil 4" />
+            <ComboBoxItem Content="Bil 5" />
+        </ComboBox>
+        <TextBlock FontSize="15" Margin="10,234,78,225" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.05"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>VÆLG destination (hvor du skal køre hen i bilen)</TextBlock>
+        <ComboBox x:Name="ChoiceCar_Copy" Margin="10,267,358,195">
+            <ComboBoxItem Content="Vælg destinationen" IsSelected="True"/>
+            <ComboBoxItem Content="Avedøre St." />
+            <ComboBoxItem Content="Valby St." />
+            <ComboBoxItem Content="Hellerup St." />
+            <ComboBoxItem Content="Hvidovre Hospital" />
+            <ComboBoxItem Content="Vigerslevvej" />
+            <ComboBoxItem Content="Tingbjerg" />
+            <ComboBoxItem Content="Friheden St." />
+            <ComboBoxItem Content="Brøndbyøster St." />
+            <ComboBoxItem Content="Rødovre Centrum." />
+        </ComboBox>
+
+        <Button Name="" Margin="98,324,75,48" FontSize="17" FontWeight="Bold" Foreground="Blue">Registrer Din Indtastning Nu! Tryk HER</Button>
+
+
+
+    </Grid>
+</Window>
