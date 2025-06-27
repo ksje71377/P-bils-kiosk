@@ -5,15 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1280" Width="1024">
+        Title="Umove P-Bils System" Height="1280" Width="1024">
+
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="17*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="17*" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition Width="14*" />
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="100" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Margin="10,96,-10,-96">
+
+        <!-- Stor overskrift -->
+        <TextBlock Grid.ColumnSpan="4"
+                   FontSize="100"
+                   Margin="10,96,-10,-96"
+                   RenderTransformOrigin="0.5,0.5"
+                   Text="Umove P-bils System">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,23 +32,57 @@
                     <RotateTransform Angle="3.437"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform>Umove P-bils System</TextBlock>
-        <TextBlock FontSize="50" RenderTransformOrigin="1.029,1.426" Grid.ColumnSpan="4" Margin="22,258,16,-216"><LineBreak />Tryk på det grønne felt når du skal UD.<LineBreak />Tryk på det røde felt når du er kommet hjem.</TextBlock>
-        <Button Margin="55,910,21,54" Content="AFLEVER BIL" FontSize="90" Cursor="Hand" Grid.ColumnSpan="2">
-            <Button.Height>300</Button.Height>
-            <Button.Width>500</Button.Width>
-            <Button.Foreground>White</Button.Foreground>
-            <Button.Background>Red</Button.Background>
-        </Button>
-        <Image Source="images/IN.BMP" Margin="0,428,0,-429" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
-        <Button Margin="55,556,21,408" Content="TAG BIL" Grid.ColumnSpan="2" FontSize="90" Cursor="Hand">
-            <Button.Height>300</Button.Height>
-            <Button.Width>500</Button.Width>
-            <Button.Foreground>White</Button.Foreground>
-            <Button.Background>Green</Button.Background>
-        </Button>
-        <Image Source="images/OUT.BMP" Margin="0,56,17,-57" HorizontalAlignment="Left" Width="431" Grid.Column="3"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <!-- Instruktion -->
+        <TextBlock Grid.ColumnSpan="4"
+                   FontSize="50"
+                   Margin="22,258,16,-216"
+                   RenderTransformOrigin="1.029,1.426"
+                   TextAlignment="Left">
+            <LineBreak/>
+            Tryk på det grønne felt når du skal UD.
+            <LineBreak/>
+            Tryk på det røde felt når du er kommet hjem.
+        </TextBlock>
+
+        <!-- RØD knap: Aflever bil (Ind) -->
+        <Button Grid.ColumnSpan="2"
+                Margin="55,910,21,54"
+                Width="500"
+                Height="300"
+                FontSize="90"
+                Background="Red"
+                Foreground="White"
+                Cursor="Hand"
+                Content="AFLEVER BIL"
+                Command="{Binding OpenInCommand}" />
+
+        <!-- Billede: IN -->
+        <Image Grid.Column="3"
+               Source="images/IN.BMP"
+               Width="431"
+               Margin="0,428,0,-429"
+               HorizontalAlignment="Left" />
+
+        <!-- GRØN knap: Tag bil (Ud) -->
+        <Button Grid.ColumnSpan="2"
+                Margin="55,556,21,408"
+                Width="500"
+                Height="300"
+                FontSize="90"
+                Background="Green"
+                Foreground="White"
+                Cursor="Hand"
+                Content="TAG BIL"
+                Command="{Binding OpenOutCommand}" />
+
+        <!-- Billede: OUT -->
+        <Image Grid.Column="3"
+               Source="images/OUT.BMP"
+               Width="431"
+               Margin="0,56,17,-57"
+               HorizontalAlignment="Left" />
     </Grid>
-
-
 </Window>

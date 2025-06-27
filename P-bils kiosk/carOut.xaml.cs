@@ -22,11 +22,9 @@ namespace P_bils_kiosk
         public carOut()
         {
             InitializeComponent();
-        }
 
-        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-
+            // Sæt ViewModel som DataContext og giv vinduet med som reference
+            DataContext = new CarOutViewModel(this);
         }
     }
 }
