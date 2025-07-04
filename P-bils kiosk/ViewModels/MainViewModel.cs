@@ -15,11 +15,13 @@ namespace P_bils_kiosk
     {
         public ICommand OpenOutCommand { get; }
         public ICommand OpenInCommand { get; }
+        public ICommand OpenAdminCommand { get; }
 
         public MainViewModel()
         {
             OpenOutCommand = new RelayCommand(OpenOutWindow);
             OpenInCommand = new RelayCommand(OpenInWindow);
+            OpenAdminCommand = new RelayCommand(OpenAdminWindow);
         }
 
         /// <summary>
@@ -37,6 +39,16 @@ namespace P_bils_kiosk
         private void OpenInWindow()
         {
             var vindue = new CarIn();
+            vindue.Show();
+        }
+
+        ///<summary>
+        ///Åbner vinduet hvor kontormedarbejderen skal tilgå administratorfunktionen
+        ///</summary>
+        
+        private void OpenAdminWindow()
+        {
+            var vindue = new Admin();
             vindue.Show();
         }
     }

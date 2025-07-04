@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
-        Title="Umove P-Bils System" Height="1280" Width="1024">
+        Title="P-Bils System" Height="1280" Width="1024" ResizeMode="NoResize">
 
     <Window.DataContext>
         <local:MainViewModel />
@@ -24,7 +24,7 @@
                    FontSize="100"
                    Margin="10,96,-10,-96"
                    RenderTransformOrigin="0.5,0.5"
-                   Text="Umove P-bils System">
+                   Text="P-bils System">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -41,10 +41,10 @@
                    Margin="22,258,16,-216"
                    RenderTransformOrigin="1.029,1.426"
                    TextAlignment="Left">
-            <LineBreak/>
-            Tryk på det grønne felt når du skal UD.
-            <LineBreak/>
-            Tryk på det røde felt når du er kommet hjem.
+        Klik "Tag Bil" når du skal UD.
+        <LineBreak />
+        <LineBreak />
+        Klik "Aflever Bil" når du er KOMMET HJEM.
         </TextBlock>
 
         <!-- RØD knap: Aflever bil (Ind) -->
@@ -61,10 +61,11 @@
 
         <!-- Billede: IN -->
         <Image Grid.Column="3"
-               Source="images/IN.BMP"
+               Source="/Views/IN.bmp"
                Width="431"
                Margin="0,428,0,-429"
-               HorizontalAlignment="Left" />
+               HorizontalAlignment="Left"
+               Cursor="No" />
 
         <!-- GRØN knap: Tag bil (Ud) -->
         <Button Grid.ColumnSpan="2"
@@ -80,9 +81,25 @@
 
         <!-- Billede: OUT -->
         <Image Grid.Column="3"
-               Source="images/OUT.BMP"
+               Source="/Views/OUT.bmp"
                Width="431"
                Margin="0,56,17,-57"
-               HorizontalAlignment="Left" />
+               HorizontalAlignment="Left" Cursor="No" />
+
+        <!-- Administrator knap -->
+        <Button 
+                FontSize="28"
+                FontWeight="UltraBlack"
+                Content="Administration - KUN DRIFT" 
+                Name="Administration" 
+                Background="Yellow" 
+                Foreground="Black" 
+                Margin="0,1164,10,10" 
+                Grid.Column="3" 
+                HorizontalAlignment="Right"
+            Height="50"
+                Width="400"
+                Cursor="Hand" 
+                Command="{Binding OpenAdminCommand}"/>
     </Grid>
 </Window>
