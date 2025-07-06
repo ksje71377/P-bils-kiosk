@@ -1,12 +1,21 @@
-﻿<Window x:Class="P_bils_kiosk.Views.Admin"
+﻿<Window x:Class="P_bils_kiosk.Admin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:P_bils_kiosk.Views"
+        xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
-        Title="Admin" Height="450" Width="800">
+        Title="Administration af P-bils systemet" Height="240" Width="400" ResizeMode="NoResize">
     <Grid>
-        
+        <StackPanel VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" FontSize="35" FontWeight="DemiBold">Administrationsmodul</TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock FontSize="18" FontWeight="Light"><Run Text="Indtast adgangskoden. Tryk på Login."/></TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBox HorizontalAlignment="Left" Height="30" Width="300" Background="White"/>
+            <Button HorizontalAlignment="Center" Command="{Binding LoginCommand}">Login</Button>
+        </StackPanel>
     </Grid>
 </Window>

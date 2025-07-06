@@ -61,7 +61,7 @@
 
         <!-- Billede: IN -->
         <Image Grid.Column="3"
-               Source="/Views/IN.bmp"
+               Source="/images/IN.bmp"
                Width="431"
                Margin="0,428,0,-429"
                HorizontalAlignment="Left"
@@ -81,7 +81,7 @@
 
         <!-- Billede: OUT -->
         <Image Grid.Column="3"
-               Source="/Views/OUT.bmp"
+               Source="/images/OUT.bmp"
                Width="431"
                Margin="0,56,17,-57"
                HorizontalAlignment="Left" Cursor="No" />

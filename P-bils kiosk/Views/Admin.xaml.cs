@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using P_bils_kiosk;
+using P_bils_kiosk.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace P_bils_kiosk
 {
@@ -22,9 +27,10 @@ namespace P_bils_kiosk
     {
         public Admin()
         {
-
+            InitializeComponent();
 
             // Sæt ViewModel som DataContext og giv vinduet med som reference
+            DataContext = new AdminViewModel(this);
 
         }
     }
