@@ -1,21 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using P_bils_kiosk.Helpers;
+using P_bils_kiosk.Models;
 
 namespace P_bils_kiosk
 {
-        public class CarOutViewModel
+    public class CarOutViewModel
+    {
+        private readonly Window _window;
+
+        public string ChaufførNummer { get; set; }
+        public string ValgtBil { get; set; }
+        public string Destination { get; set; }
+
+        public ICommand BekræftCommand { get; }
+
+        public CarOutViewModel(Window window)
         {
-            private readonly Window _window;
+            _window = window;
+            BekræftCommand = new RelayCommand(GemOgLuk);
+        }
 
-            public CarOutViewModel(Window window)
+        private void GemOgLuk()
+        {
+            var entry = new CarLogEntry
             {
-                _window = window;
-            }
+                Tidspunkt = DateTime.Now,
+                chaufførNummer = this.ChaufførNummer,
+                valgtBil = this.ValgtBil,
+                destination = this.Destination,
+                isOutbound = true
+            };
 
-            // Tilføj properties og kommandoer her
+            try
+            {
+                ExcelExporter.Export(entry);
+                MessageBox.Show("Udkørsel registreret og gemt i Excel.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
+                _window.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fejl ved gemning: {ex.Message}", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
+}

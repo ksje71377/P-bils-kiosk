@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
         Title="Administration af P-bils systemet" Height="240" Width="400" ResizeMode="NoResize">
+    
+    <!-- Binder InputAccessKey -->
+
+    
     <Grid>
         <StackPanel VerticalAlignment="Top">
             <TextBlock HorizontalAlignment="Left" FontSize="35" FontWeight="DemiBold">Administrationsmodul</TextBlock>
@@ -14,7 +18,7 @@
             <TextBlock FontSize="18" FontWeight="Light"><Run Text="Indtast adgangskoden. Tryk på Login."/></TextBlock>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom">
-            <TextBox HorizontalAlignment="Left" Height="30" Width="300" Background="White"/>
+            <TextBox HorizontalAlignment="Left" Height="30" Width="300" Background="White" Text="{Binding InputAccessKey, UpdateSourceTrigger=PropertyChanged}"/>
             <Button HorizontalAlignment="Center" Command="{Binding LoginCommand}">Login</Button>
         </StackPanel>
     </Grid>

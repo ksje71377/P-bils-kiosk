@@ -8,17 +8,11 @@
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Overskrift -->
             <RowDefinition Height="Auto"/>
-            <!-- CHF nr -->
             <RowDefinition Height="Auto"/>
-            <!-- Bilvalg -->
             <RowDefinition Height="Auto"/>
-            <!-- Destination -->
             <RowDefinition Height="*"/>
-            <!-- Spacer -->
             <RowDefinition Height="Auto"/>
-            <!-- Knap -->
         </Grid.RowDefinitions>
 
         <!-- Overskrift -->
@@ -40,11 +34,11 @@
                     HorizontalAlignment="Left"
                     Margin="0 0 0 15">
             <TextBlock FontSize="15" Text="SKRIV dit CHF nr:"/>
-            <TextBox x:Name="SendName"
-                     Width="200"
+            <TextBox Width="200"
                      Height="30"
                      Margin="0 5 0 0"
-                     MaxLength="4"/>
+                     MaxLength="4"
+                     Text="{Binding ChaufførNummer, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <!-- Vælg bil -->
@@ -53,11 +47,10 @@
                     HorizontalAlignment="Left"
                     Margin="0 0 0 15">
             <TextBlock FontSize="15" Text="VÆLG bilen du har taget:"/>
-            <ComboBox x:Name="ChoiceCar"
-                      Width="250"
+            <ComboBox HorizontalAlignment="Left" Width="250"
                       Height="30"
-                      Margin="0 5 0 0">
-                <ComboBoxItem Content="Vælg bilen her" IsSelected="True"/>
+                      Margin="0 5 0 0"
+                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}">
                 <ComboBoxItem Content="Bil 1401"/>
                 <ComboBoxItem Content="Bil 1402"/>
                 <ComboBoxItem Content="Bil 1403"/>
@@ -70,7 +63,6 @@
                 <ComboBoxItem Content="Bil 1410"/>
                 <ComboBoxItem Content="Bil 1411"/>
                 <ComboBoxItem Content="LÅNE TP-BIL"/>
-
             </ComboBox>
         </StackPanel>
 
@@ -80,13 +72,10 @@
                     HorizontalAlignment="Left"
                     Margin="0 0 0 15">
             <TextBlock FontSize="15" Text="VÆLG destination (hvor du skal køre hen i bilen):"/>
-            <ComboBox x:Name="ChoiceDestination"
-                      Width="250"
+            <ComboBox HorizontalAlignment="Left" Width="250"
                       Height="30"
                       Margin="0 5 0 0"
-                      HorizontalAlignment="Left">
-                
-                <ComboBoxItem Content="Vælg destinationen" IsSelected="True"/>
+                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}">
                 <ComboBoxItem Content="Avedøre St."/>
                 <ComboBoxItem Content="Valby St."/>
                 <ComboBoxItem Content="Hellerup St."/>
@@ -101,16 +90,15 @@
 
         <!-- Registrer-knap -->
         <Button Grid.Row="4"
-        x:Name="TurnOut"
-        Content="Registrer Din Indtastning Nu! Tryk HER"
-        Width="300"
-        Height="45"
-        Background="Blue"
-        Foreground="White"
-        FontSize="16"
-        FontWeight="Bold"
-        HorizontalAlignment="Center"
-        Margin="0 20 0 0"
-        Command="{Binding GemCommand}"/>
+                Content="Registrer Din Indtastning Nu! Tryk HER"
+                Width="300"
+                Height="45"
+                Background="Blue"
+                Foreground="White"
+                FontSize="16"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Margin="0 20 0 0"
+                Command="{Binding BekræftCommand}"/>
     </Grid>
 </Window>

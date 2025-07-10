@@ -32,6 +32,6 @@ namespace P_bils_kiosk
             // Sæt ViewModel som DataContext og giv vinduet med som reference
             DataContext = new AdminViewModel(this);
 
-        }
+    }
     }
 }
