@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
-        Title="P-Bils System" Height="1280" Width="1024" ResizeMode="NoResize">
+        Title="Puljebils Software" Height="1280" Width="1024" ResizeMode="NoResize" Background="GhostWhite">
 
     <Window.DataContext>
         <local:MainViewModel />
@@ -19,21 +19,9 @@
             <ColumnDefinition Width="14*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Stor overskrift -->
-        <TextBlock Grid.ColumnSpan="4"
-                   FontSize="100"
-                   Margin="10,96,-10,-96"
-                   RenderTransformOrigin="0.5,0.5"
-                   Text="P-bils System">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="3.437"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
+        <!-- Logo -->
+
+        <Image Source="/images/symbol.bmp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,10,0" />
 
         <!-- Instruktion -->
         <TextBlock Grid.ColumnSpan="4"

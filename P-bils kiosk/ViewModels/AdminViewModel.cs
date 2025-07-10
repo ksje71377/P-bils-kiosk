@@ -10,6 +10,7 @@ namespace P_bils_kiosk.ViewModels
     class AdminViewModel
     {
         private readonly Window _window;
+        public int InputAccessKey { get; set; } // Property til at binde adgangskoden fra UI
 
         public AdminViewModel(Window window)
         {

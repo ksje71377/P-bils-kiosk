@@ -11,7 +11,9 @@
 
   <ItemGroup>
     <None Remove="images\IN.bmp" />
+    <None Remove="images\logo.bmp" />
     <None Remove="images\OUT.bmp" />
+    <None Remove="images\symbol.bmp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,10 +31,19 @@
     <Content Include="images\OUT.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\symbol.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.105.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="images\logo.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
