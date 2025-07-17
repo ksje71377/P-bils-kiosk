@@ -50,7 +50,8 @@
             <ComboBox HorizontalAlignment="Left" Width="250"
                       Height="30"
                       Margin="0 5 0 0"
-                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}">
+                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}"
+                                            SelectedValuePath="Content">
                 <ComboBoxItem Content="Bil 1401"/>
                 <ComboBoxItem Content="Bil 1402"/>
                 <ComboBoxItem Content="Bil 1403"/>
@@ -75,7 +76,8 @@
             <ComboBox HorizontalAlignment="Left" Width="250"
                       Height="30"
                       Margin="0 5 0 0"
-                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}">
+                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}"
+                                            SelectedValuePath="Content">
                 <ComboBoxItem Content="Avedøre St."/>
                 <ComboBoxItem Content="Valby St."/>
                 <ComboBoxItem Content="Hellerup St."/>

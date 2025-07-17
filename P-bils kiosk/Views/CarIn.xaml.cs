@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P_bils_kiosk.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace P_bils_kiosk
     /// </summary>
     public partial class CarIn : Window
     {
-        public CarIn()
-        {
-            InitializeComponent();
+            public CarIn()
+            {
+                InitializeComponent();
+                DataContext = new CarInViewModel(this);
+            }
         }
     }
-}
+
