@@ -5,89 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P_bils_kiosk"
         mc:Ignorable="d"
-        Title="Puljebils Software" Height="1280" Width="1024" ResizeMode="NoResize" Background="GhostWhite">
+        Title="Puljebils Software"
+        Background="GhostWhite"
+        WindowState="Maximized">
 
     <Window.DataContext>
         <local:MainViewModel />
     </Window.DataContext>
 
-    <Grid>
+    <Viewbox Stretch="Uniform">
+    <Grid Height="1280" Width="1024">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Logo -->
+            <RowDefinition Height="Auto" />
+            <!-- Instruktion -->
+            <RowDefinition Height="*" />
+            <!-- Knapper -->
+            <RowDefinition Height="Auto" />
+            <!-- Admin knap -->
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="17*" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="0*" />
-            <ColumnDefinition Width="14*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <!-- Logo -->
-
-        <Image Source="/images/symbol.bmp" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,10,0" />
+        <Image Grid.Row="0" Grid.ColumnSpan="2"
+               Source="/images/symbol.bmp"
+               HorizontalAlignment="Center"
+               Margin="0,20,0,20"
+               Height="Auto" />
 
         <!-- Instruktion -->
-        <TextBlock Grid.ColumnSpan="4"
-                   FontSize="50"
-                   Margin="22,258,16,-216"
-                   RenderTransformOrigin="1.029,1.426"
-                   TextAlignment="Left">
-        Klik "Tag Bil" når du skal UD.
-        <LineBreak />
-        <LineBreak />
-        Klik "Aflever Bil" når du er KOMMET HJEM.
-        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
+                   FontSize="36"
+                   Text="Brug musen for at klikke på den rigtige knap."
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30"
+                   TextAlignment="Center"
+                   FontWeight="SemiBold" />
 
-        <!-- RØD knap: Aflever bil (Ind) -->
-        <Button Grid.ColumnSpan="2"
-                Margin="55,910,21,54"
-                Width="500"
-                Height="300"
-                FontSize="90"
-                Background="Red"
-                Foreground="White"
-                Cursor="Hand"
-                Content="AFLEVER BIL"
-                Command="{Binding OpenInCommand}" />
+        <!-- Venstre side: BIL UD -->
+        <StackPanel Grid.Row="2" Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,20">
+            <Image Source="/images/OUT.bmp" Width="300" Margin="0,0,0,10"/>
+            <Button Content="BIL UD"
+                    FontSize="60"
+                    Width="450"
+                    Height="160"
+                    Background="Green"
+                    Foreground="White"
+                    Command="{Binding OpenOutCommand}" />
+        </StackPanel>
 
-        <!-- Billede: IN -->
-        <Image Grid.Column="3"
-               Source="/images/IN.bmp"
-               Width="431"
-               Margin="0,428,0,-429"
-               HorizontalAlignment="Left"
-               Cursor="No" />
+        <!-- Højre side: BIL HJEM -->
+        <StackPanel Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,20">
+            <Image Source="/images/IN.bmp" Width="300" Margin="0,0,0,10"/>
+            <Button Content="BIL HJEM"
+                    FontSize="60"
+                    Width="450"
+                    Height="160"
+                    Background="Red"
+                    Foreground="White"
+                    Command="{Binding OpenInCommand}" />
+        </StackPanel>
 
-        <!-- GRØN knap: Tag bil (Ud) -->
-        <Button Grid.ColumnSpan="2"
-                Margin="55,556,21,408"
-                Width="500"
-                Height="300"
-                FontSize="90"
-                Background="Green"
-                Foreground="White"
-                Cursor="Hand"
-                Content="TAG BIL"
-                Command="{Binding OpenOutCommand}" />
-
-        <!-- Billede: OUT -->
-        <Image Grid.Column="3"
-               Source="/images/OUT.bmp"
-               Width="431"
-               Margin="0,56,17,-57"
-               HorizontalAlignment="Left" Cursor="No" />
-
-        <!-- Administrator knap -->
-        <Button 
-                FontSize="28"
-                FontWeight="UltraBlack"
-                Content="Administration - KUN DRIFT" 
-                Name="Administration" 
-                Background="Yellow" 
-                Foreground="Black" 
-                Margin="0,1164,10,10" 
-                Grid.Column="3" 
-                HorizontalAlignment="Right"
-            Height="50"
+        <!-- Admin knap -->
+        <Button Grid.Row="3" Grid.Column="1"
+                Content="Administration - KUN DRIFT"
+                FontSize="26"
+                FontWeight="Bold"
                 Width="400"
-                Cursor="Hand" 
-                Command="{Binding OpenAdminCommand}"/>
+                Height="60"
+                Background="Yellow"
+                Foreground="Black"
+                HorizontalAlignment="Right"
+                Margin="0,30,30,30"
+                Command="{Binding OpenAdminCommand}" />
     </Grid>
+    </Viewbox>
 </Window>

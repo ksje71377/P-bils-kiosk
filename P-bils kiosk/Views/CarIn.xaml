@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Chauffør tager en bil inde fra garagen og kører ud på ruten"
         Height="500" Width="500"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -15,56 +15,33 @@
         </Grid.RowDefinitions>
 
         <!-- Overskrift -->
-        <TextBlock Grid.Row="0" FontSize="22" TextWrapping="Wrap" Margin="0 0 0 10">
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" FontSize="22" TextWrapping="Wrap" Margin="0 0 0 10">
             Chauffør er kommet UDE FRA RUTEN
             <LineBreak/>
             og er nu kommet tilbage til garagen med bilen
         </TextBlock>
 
         <!-- CHF nr -->
-        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 0 0 10">
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 0 0 10" HorizontalAlignment="Left">
             <TextBlock FontSize="15">SKRIV dit CHF nr:</TextBlock>
             <TextBox Width="200" Height="25"
                      Text="{Binding ChaufførNummer, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <!-- Vælg bil -->
-        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0 0 0 10">
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0 0 0 10" HorizontalAlignment="Left">
             <TextBlock FontSize="15">VÆLG bilen du er kommet hjem med:</TextBlock>
             <ComboBox Width="250" Height="30"
-                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}"
-                      SelectedValuePath="Content">
-                <ComboBoxItem Content="Bil 1401"/>
-                <ComboBoxItem Content="Bil 1402"/>
-                <ComboBoxItem Content="Bil 1403"/>
-                <ComboBoxItem Content="Bil 1404"/>
-                <ComboBoxItem Content="Bil 1405"/>
-                <ComboBoxItem Content="Bil 1406"/>
-                <ComboBoxItem Content="Bil 1407"/>
-                <ComboBoxItem Content="Bil 1408"/>
-                <ComboBoxItem Content="Bil 1409"/>
-                <ComboBoxItem Content="Bil 1410"/>
-                <ComboBoxItem Content="Bil 1411"/>
-                <ComboBoxItem Content="LÅNE TP-BIL"/>
-            </ComboBox>
+                      ItemsSource="{Binding IndBiler}"
+                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <!-- Vælg hvor fra -->
-        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="0 0 0 10">
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="0 0 0 10" HorizontalAlignment="Left">
             <TextBlock FontSize="15">VÆLG hvor du kom fra:</TextBlock>
             <ComboBox Width="250" Height="30"
-                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}"
-                      SelectedValuePath="Content">
-                <ComboBoxItem Content="Avedøre St."/>
-                <ComboBoxItem Content="Valby St."/>
-                <ComboBoxItem Content="Hellerup St."/>
-                <ComboBoxItem Content="Hvidovre Hospital"/>
-                <ComboBoxItem Content="Vigerslevvej"/>
-                <ComboBoxItem Content="Tingbjerg"/>
-                <ComboBoxItem Content="Friheden St."/>
-                <ComboBoxItem Content="Brøndbyøster St."/>
-                <ComboBoxItem Content="Rødovre Centrum."/>
-            </ComboBox>
+                      ItemsSource="{Binding IndDestinationer}"
+                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <!-- Registrer knap -->
@@ -76,7 +53,7 @@
                 Foreground="Yellow"
                 FontSize="16"
                 FontWeight="Bold"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Margin="0 20 0 0"
                 Command="{Binding BekræftCommand}"/>
     </Grid>

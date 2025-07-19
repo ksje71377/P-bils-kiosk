@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
+using DocumentFormat.OpenXml.Wordprocessing;
 using P_bils_kiosk.Helpers;
 using P_bils_kiosk.Models;
 
@@ -13,6 +15,8 @@ namespace P_bils_kiosk
         public string ChaufførNummer { get; set; }
         public string ValgtBil { get; set; }
         public string Destination { get; set; }
+        public ObservableCollection<string> UdDestinationer { get; set; }
+        public ObservableCollection<string> UdBiler { get; set; }
 
         public ICommand BekræftCommand { get; }
 
@@ -20,6 +24,8 @@ namespace P_bils_kiosk
         {
             _window = window;
             BekræftCommand = new RelayCommand(GemOgLuk);
+            UdBiler = new ObservableCollection<string>(ComboBoxLoader.LoadCars());
+            UdDestinationer = new ObservableCollection<string>(ComboBoxLoader.LoadDestinations());
         }
 
         private void GemOgLuk()
@@ -36,7 +42,7 @@ namespace P_bils_kiosk
             try
             {
                 ExcelExporter.Export(entry);
-                MessageBox.Show("Udkørsel registreret og gemt i Excel.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Du har gjort et meget godt stykke arbejde. Du gemte det.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                 _window.Close();
             }
             catch (Exception ex)

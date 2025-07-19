@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 using P_bils_kiosk.Helpers;
@@ -14,12 +15,17 @@ namespace P_bils_kiosk.ViewModels
         public string ValgtBil { get; set; }
         public string Destination { get; set; }
 
+        public ObservableCollection<string> IndDestinationer { get; set; }
+        public ObservableCollection<string> IndBiler { get; set; }
+
         public ICommand BekræftCommand { get; }
 
         public CarInViewModel(Window window)
         {
             _window = window;
             BekræftCommand = new RelayCommand(GemOgLuk);
+            IndBiler = new ObservableCollection<string>(ComboBoxLoader.LoadCars());
+            IndDestinationer = new ObservableCollection<string>(ComboBoxLoader.LoadDestinations());
         }
 
         private void GemOgLuk()

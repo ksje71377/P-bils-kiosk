@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Chauffør tager en bil inde fra garagen og kører ud på ruten"
         Height="500" Width="500"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -43,51 +43,28 @@
 
         <!-- Vælg bil -->
         <StackPanel Grid.Row="2"
-                    Orientation="Vertical"
-                    HorizontalAlignment="Left"
-                    Margin="0 0 0 15">
+            Orientation="Vertical"
+            HorizontalAlignment="Left"
+            Margin="0 0 0 15">
             <TextBlock FontSize="15" Text="VÆLG bilen du har taget:"/>
             <ComboBox HorizontalAlignment="Left" Width="250"
-                      Height="30"
-                      Margin="0 5 0 0"
-                      SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}"
-                                            SelectedValuePath="Content">
-                <ComboBoxItem Content="Bil 1401"/>
-                <ComboBoxItem Content="Bil 1402"/>
-                <ComboBoxItem Content="Bil 1403"/>
-                <ComboBoxItem Content="Bil 1404"/>
-                <ComboBoxItem Content="Bil 1405"/>
-                <ComboBoxItem Content="Bil 1406"/>
-                <ComboBoxItem Content="Bil 1407"/>
-                <ComboBoxItem Content="Bil 1408"/>
-                <ComboBoxItem Content="Bil 1409"/>
-                <ComboBoxItem Content="Bil 1410"/>
-                <ComboBoxItem Content="Bil 1411"/>
-                <ComboBoxItem Content="LÅNE TP-BIL"/>
-            </ComboBox>
+              Height="30"
+              Margin="0 5 0 0"
+              ItemsSource="{Binding UdBiler}"
+              SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
 
         <!-- Vælg destination -->
         <StackPanel Grid.Row="3"
-                    Orientation="Vertical"
-                    HorizontalAlignment="Left"
-                    Margin="0 0 0 15">
+            Orientation="Vertical"
+            HorizontalAlignment="Left"
+            Margin="0 0 0 15">
             <TextBlock FontSize="15" Text="VÆLG destination (hvor du skal køre hen i bilen):"/>
             <ComboBox HorizontalAlignment="Left" Width="250"
-                      Height="30"
-                      Margin="0 5 0 0"
-                      SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}"
-                                            SelectedValuePath="Content">
-                <ComboBoxItem Content="Avedøre St."/>
-                <ComboBoxItem Content="Valby St."/>
-                <ComboBoxItem Content="Hellerup St."/>
-                <ComboBoxItem Content="Hvidovre Hospital"/>
-                <ComboBoxItem Content="Vigerslevvej"/>
-                <ComboBoxItem Content="Tingbjerg"/>
-                <ComboBoxItem Content="Friheden St."/>
-                <ComboBoxItem Content="Brøndbyøster St."/>
-                <ComboBoxItem Content="Rødovre Centrum."/>
-            </ComboBox>
+              Height="30"
+              Margin="0 5 0 0"
+              ItemsSource="{Binding UdDestinationer}"
+              SelectedItem="{Binding Destination, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
 
         <!-- Registrer-knap -->
@@ -99,7 +76,7 @@
                 Foreground="White"
                 FontSize="16"
                 FontWeight="Bold"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Margin="0 20 0 0"
                 Command="{Binding BekræftCommand}"/>
     </Grid>
