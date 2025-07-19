@@ -42,7 +42,7 @@ namespace P_bils_kiosk
             try
             {
                 ExcelExporter.Export(entry);
-                MessageBox.Show("Du har gjort et meget godt stykke arbejde. Du gemte det.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Tak fordi du registrerede dine oplysninger. Rigtig god tur, kør forsigtigt.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                 _window.Close();
             }
             catch (Exception ex)

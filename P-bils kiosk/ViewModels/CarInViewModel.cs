@@ -42,7 +42,7 @@ namespace P_bils_kiosk.ViewModels
             try
             {
                 ExcelExporter.Export(entry);
-                MessageBox.Show("Indkørsel registreret og gemt i Excel.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Dine oplysninger er blevet registreret. Tak for din indsats. God fyraften eller pause.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                 _window.Close();
             }
             catch (Exception ex)
