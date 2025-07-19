@@ -1,0 +1,14 @@
+{
+  "Smtp": {
+    "Host": "send.one.com",
+    "Port": 587,
+    "SenderEmail": "puljebil@stutzer-music.com",
+    "SenderPassword": "Puljebil321"
+  },
+  "MailingList": [
+    "modtager1@example.com",
+    "modtager2@example.com",
+    "modtager3@example.com"
+  ]
+}
+
