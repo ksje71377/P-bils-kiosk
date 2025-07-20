@@ -56,7 +56,7 @@ namespace P_bils_kiosk.ViewModels
             }
             else if (!System.Text.RegularExpressions.Regex.IsMatch(entry.chaufførNummer, @"^\d{4}$"))
             {
-                MessageBox.Show("Chaufførnummer skal bestå af præcis 4 cifre.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Chaufførnummer skal bestå af præcis 4 numeriske cifre.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             try

@@ -1,4 +1,5 @@
-﻿// ✅ ComboBoxLoader.cs (refaktoreret og samlet)
+﻿// JSON loader til ComboBox i P-bils kiosk applikationen
+
 using System;
 using System.Collections.Generic;
 using System.IO;

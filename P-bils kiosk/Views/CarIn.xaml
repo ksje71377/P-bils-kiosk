@@ -46,7 +46,7 @@
 
         <!-- Registrer knap -->
         <Button Grid.Row="4"
-                Content="Registrer Din Indtastning Nu! Tryk HER"
+                Content="KLIK HER for at sende det indtastede"
                 Width="300"
                 Height="40"
                 Background="Black"
