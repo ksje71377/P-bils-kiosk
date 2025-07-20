@@ -39,6 +39,26 @@ namespace P_bils_kiosk.ViewModels
                 isOutbound = false // Da det er "Car IN"
             };
 
+            //Validering af brugerens input
+
+            if (string.IsNullOrWhiteSpace(entry.valgtBil))
+            {
+                MessageBox.Show("Bil kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (string.IsNullOrWhiteSpace(entry.destination))
+            {
+                MessageBox.Show("Destination kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (string.IsNullOrWhiteSpace(entry.chaufførNummer))
+            {
+                MessageBox.Show("Chaufførnummer kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(entry.chaufførNummer, @"^\d{4}$"))
+            {
+                MessageBox.Show("Chaufførnummer skal bestå af præcis 4 cifre.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             try
             {
                 ExcelExporter.Export(entry);
