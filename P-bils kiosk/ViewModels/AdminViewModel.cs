@@ -31,9 +31,9 @@ namespace P_bils_kiosk.ViewModels
             }
             else
             {
-                MessageBox.Show("Forkert adgangskode", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
                 SoundPlayer player = new SoundPlayer("Sounds\\error.wav");
                 player.Play();
+                MessageBox.Show("Forkert adgangskode", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

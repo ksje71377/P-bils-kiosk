@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using P_bils_kiosk.Helpers;
@@ -7,7 +9,7 @@ using P_bils_kiosk.Models;
 
 namespace P_bils_kiosk.ViewModels
 {
-    public class CarInViewModel
+    public class CarInViewModel : IViewModelCommon
     {
         private readonly Window _window;
 
@@ -39,36 +41,36 @@ namespace P_bils_kiosk.ViewModels
                 isOutbound = false // Da det er "Car IN"
             };
 
-            //Validering af brugerens input
+            //Valideringsmetoden kaldes her
 
-            if (string.IsNullOrWhiteSpace(entry.valgtBil))
+            var validator = new ValidationService();
+            bool inputIsValid = validator.ControlUserInput(this);
+
+            if (inputIsValid == false)
+
             {
-                MessageBox.Show("Bil kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (string.IsNullOrWhiteSpace(entry.destination))
-            {
-                MessageBox.Show("Destination kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (string.IsNullOrWhiteSpace(entry.chaufførNummer))
-            {
-                MessageBox.Show("Chaufførnummer kan ikke være tomt.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Brugeren tastede noget forkert, fejl er allerede vist i metoden.
                 return;
             }
-            else if (!System.Text.RegularExpressions.Regex.IsMatch(entry.chaufførNummer, @"^\d{4}$"))
+
+            else
+
             {
-                MessageBox.Show("Chaufførnummer skal bestå af præcis 4 numeriske cifre.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            try
-            {
-                ExcelExporter.Export(entry);
-                MessageBox.Show("Dine oplysninger er blevet registreret. Tak for din indsats. God fyraften eller pause.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
-                _window.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Fejl ved gemning: {ex.Message}", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                try
+
+                {
+                    ExcelExporter.Export(entry);
+                    MessageBox.Show("Tak fordi du registrerede dine oplysninger. Rigtig god tur, kør forsigtigt.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
+                    _window.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Fejl ved gemning: {ex.Message}", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
 }
+
