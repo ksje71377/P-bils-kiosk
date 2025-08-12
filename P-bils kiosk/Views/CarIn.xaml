@@ -23,14 +23,14 @@
 
         <!-- CHF nr -->
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 0 0 10" HorizontalAlignment="Left">
-            <TextBlock FontSize="15">SKRIV dit CHF nr:</TextBlock>
+            <TextBlock FontSize="15">SKRIV chaufførnummer:</TextBlock>
             <TextBox Width="200" Height="25"
                      Text="{Binding ChaufførNummer, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <!-- Vælg bil -->
         <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0 0 0 10" HorizontalAlignment="Left">
-            <TextBlock FontSize="15">VÆLG bilen du er kommet hjem med:</TextBlock>
+            <TextBlock FontSize="15">VÆLG P-bil (Se på nøgle):</TextBlock>
             <ComboBox Width="250" Height="30"
                       ItemsSource="{Binding IndBiler}"
                       SelectedItem="{Binding ValgtBil, UpdateSourceTrigger=PropertyChanged}"/>
@@ -46,7 +46,7 @@
 
         <!-- Registrer knap -->
         <Button Grid.Row="4"
-                Content="KLIK HER for at sende det indtastede"
+                Content="SEND INFORMATION"
                 Width="300"
                 Height="40"
                 Background="Black"

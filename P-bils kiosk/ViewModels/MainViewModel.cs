@@ -16,6 +16,7 @@ namespace P_bils_kiosk
         public ICommand OpenOutCommand { get; }
         public ICommand OpenInCommand { get; }
         public ICommand OpenAdminCommand { get; }
+        public ICommand OpenAdminLoggedInCommand { get; }
 
         public MainViewModel()
         {

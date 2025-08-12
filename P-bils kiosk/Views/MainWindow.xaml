@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Puljebils Software"
         Background="GhostWhite"
-        WindowState="Maximized">
+        WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None">
 
     <Window.DataContext>
         <local:MainViewModel />
@@ -24,7 +24,9 @@
             <!-- Knapper -->
             <RowDefinition Height="Auto" />
             <!-- Admin knap -->
-        </Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!--Footer-->
+            </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -32,6 +34,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Logo -->
+        
         <Image Grid.Row="0" Grid.ColumnSpan="2"
                Source="/images/symbol.bmp"
                HorizontalAlignment="Center"
@@ -39,6 +42,7 @@
                Height="Auto" />
 
         <!-- Instruktion -->
+        
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
                    FontSize="36"
                    Text="Brug musen for at klikke på den rigtige knap."
@@ -48,6 +52,7 @@
                    FontWeight="SemiBold" />
 
         <!-- Venstre side: BIL UD -->
+        
         <StackPanel Grid.Row="2" Grid.Column="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
@@ -63,6 +68,7 @@
         </StackPanel>
 
         <!-- Højre side: BIL HJEM -->
+        
         <StackPanel Grid.Row="2" Grid.Column="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
@@ -77,8 +83,11 @@
                     Command="{Binding OpenInCommand}" />
         </StackPanel>
 
-        <!-- Admin knap -->
-        <Button Grid.Row="3" Grid.Column="1"
+            <!-- Admin knap -->
+
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+
+                <Button
                 Content="Administration - KUN DRIFT"
                 FontSize="26"
                 FontWeight="Bold"
@@ -87,8 +96,19 @@
                 Background="Yellow"
                 Foreground="Black"
                 HorizontalAlignment="Right"
-                Margin="0,30,30,30"
                 Command="{Binding OpenAdminCommand}" />
-    </Grid>
+            </StackPanel>
+        
+            <!-- Footer -->
+        
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
+                
+                <TextBlock                     
+                    HorizontalAlignment="Right"
+                    FontSize="14" Margin="20,20,20,20" 
+                    Text="Puljebils Software - Umove Version 0.00. Kennie S. J. 2025, alle rettigheder forbeholdes." />
+            </StackPanel>
+        
+        </Grid>
     </Viewbox>
 </Window>

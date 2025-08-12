@@ -9,18 +9,18 @@ namespace P_bils_kiosk.Helpers
 {
     public class AutoMailer
     {
-        private string SmtpHost { get; set; }
-        private int SmtpPort { get; set; }
-        private string SenderEmail { get; set; }
-        private string SenderPassword { get; set; }
-        private List<string> MailingList { get; set; }
+        public string SmtpHost { get; private set; }
+        public int SmtpPort { get; private set; }
+        public string SenderEmail { get; private set; }
+        public string SenderPassword { get; private set; }
+        public List<string> MailingList { get; private set; }
 
         public AutoMailer()
         {
-            // Læs konfiguration fra appsettings.json
+            // Læs konfiguration fra MailingList.json
             var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile(Path.Combine("databases", "MailingList.json"))
                 .Build();
 
             var smtpConfig = config.GetSection("Smtp");
@@ -36,10 +36,12 @@ namespace P_bils_kiosk.Helpers
         {
             var mail = new MailMessage();
             mail.From = new MailAddress(SenderEmail);
+
             foreach (var recipient in MailingList)
             {
                 mail.To.Add(recipient);
             }
+
             mail.Subject = subject;
             mail.Body = body;
             mail.IsBodyHtml = false;

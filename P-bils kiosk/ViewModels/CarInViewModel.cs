@@ -61,7 +61,6 @@ namespace P_bils_kiosk.ViewModels
 
                 {
                     ExcelExporter.Export(entry);
-                    MessageBox.Show("Tak fordi du registrerede dine oplysninger. Rigtig god tur, kør forsigtigt.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                     _window.Close();
                 }
 

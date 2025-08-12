@@ -1,69 +1,76 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <RootNamespace>P_bils_kiosk</RootNamespace>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<RootNamespace>P_bils_kiosk</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<StartupObject>P_bils_kiosk.App</StartupObject>
+		<ApplicationIcon>favicon.ico</ApplicationIcon>
 
-  <ItemGroup>
-    <None Remove="Databases\CarsComboBox.json" />
-    <None Remove="Databases\DestinationComboBox.json" />
-    <None Remove="Databases\MailingList.json" />
-    <None Remove="images\IN.bmp" />
-    <None Remove="images\logo.bmp" />
-    <None Remove="images\OUT.bmp" />
-    <None Remove="images\symbol.bmp" />
-    <None Remove="Sounds\error.wav" />
-  </ItemGroup>
+		<!-- Interceptors fix -->
+		<EnableInterceptors>true</EnableInterceptors>
+		<InterceptorsNamespaces>$(InterceptorsNamespaces),Microsoft.Extensions.Configuration.Binder.SourceGeneration</InterceptorsNamespaces>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Page Remove="App\App.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Databases\CarsComboBox.json" />
+		<None Remove="Databases\DestinationComboBox.json" />
+		<None Remove="Databases\MailingList.json" />
+		<None Remove="images\IN.bmp" />
+		<None Remove="images\logo.bmp" />
+		<None Remove="images\OUT.bmp" />
+		<None Remove="images\symbol.bmp" />
+		<None Remove="Sounds\error.wav" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ApplicationDefinition Include="App\App.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Page Remove="App\App.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Databases\CarsComboBox.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Databases\DestinationComboBox.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Databases\MailingList.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\IN.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\OUT.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\symbol.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Sounds\error.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<ApplicationDefinition Include="App\App.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ClosedXML" Version="0.105.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="Databases\CarsComboBox.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Databases\DestinationComboBox.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Databases\MailingList.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="favicon.ico" />
+		<Content Include="images\IN.bmp">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="images\OUT.bmp">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="images\symbol.bmp">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Sounds\error.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="images\logo.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.105.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="images\logo.bmp">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 </Project>

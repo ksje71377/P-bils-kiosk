@@ -6,28 +6,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using P_bils_kiosk;
 
 namespace P_bils_kiosk.ViewModels
 {
     class AdminViewModel
     {
+        private readonly Window _window;
+
         public AdminViewModel(Window window)
         {
             _window = window;
             LoginCommand = new RelayCommand(ExecuteLogin);
         }
-        private readonly Window _window;
 
         public ICommand LoginCommand { get; }
 
         public string InputAccessKey { get; set; }
+        private void OpenAdminLoggedInWindow()
+        {
+            var vindue = new AdminLoggedIn();
+            vindue.Show();
+        }
 
         private void ExecuteLogin()
         {
             if (InputAccessKey == "2650") // Erstat evt. med mere sikker tjek senere
             {
-                MessageBox.Show("Login godkendt", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
-                _window.Close(); // Eller åbn næste vindue her
+                OpenAdminLoggedInWindow();
             }
             else
             {
@@ -35,7 +41,6 @@ namespace P_bils_kiosk.ViewModels
                 player.Play();
                 MessageBox.Show("Forkert adgangskode", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
     }
 }

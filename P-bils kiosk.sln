@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P-bils kiosk", "P-bils kiosk\P-bils kiosk.csproj", "{FDABA5FD-7A57-4AA6-960A-F271697B2A19}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Puljebils Software", "Puljebils Software\Puljebils Software.vdproj", "{1594C21B-99C7-4A97-8C76-235A3DA70FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{FDABA5FD-7A57-4AA6-960A-F271697B2A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDABA5FD-7A57-4AA6-960A-F271697B2A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDABA5FD-7A57-4AA6-960A-F271697B2A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1594C21B-99C7-4A97-8C76-235A3DA70FB0}.Debug|Any CPU.ActiveCfg = Debug
+		{1594C21B-99C7-4A97-8C76-235A3DA70FB0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

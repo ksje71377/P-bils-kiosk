@@ -1,7 +1,7 @@
 ﻿<Window x:Class="P_bils_kiosk.carOut"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Chauffør tager en bil inde fra garagen og kører ud på ruten"
+        Title="Bil UD fra garagen"
         Height="500" Width="500"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
@@ -23,9 +23,7 @@
                    TextWrapping="Wrap"
                    HorizontalAlignment="Left"
                    Margin="0 0 0 20">
-            Chauffør tager en bil inde fra garagen
-            <LineBreak/>
-            og kører ud på ruten med den
+Bil UD fra garagen
         </TextBlock>
 
         <!-- CHF nr -->
@@ -33,7 +31,7 @@
                     Orientation="Vertical"
                     HorizontalAlignment="Left"
                     Margin="0 0 0 15">
-            <TextBlock FontSize="15" Text="SKRIV dit CHF nr:"/>
+            <TextBlock FontSize="15" Text="SKRIV chaufførnr:"/>
             <TextBox Width="200"
                      Height="30"
                      Margin="0 5 0 0"
@@ -46,7 +44,7 @@
             Orientation="Vertical"
             HorizontalAlignment="Left"
             Margin="0 0 0 15">
-            <TextBlock FontSize="15" Text="VÆLG bilen du har taget:"/>
+            <TextBlock FontSize="15" Text="VÆLG bilen du skal køre (se på nøgle):"/>
             <ComboBox HorizontalAlignment="Left" Width="250"
               Height="30"
               Margin="0 5 0 0"
@@ -69,7 +67,7 @@
 
         <!-- Registrer-knap -->
         <Button Grid.Row="4"
-                Content="KLIK HER for at sende det indtastede"
+                Content="SEND INFORMATION"
                 Width="300"
                 Height="45"
                 Background="Blue"

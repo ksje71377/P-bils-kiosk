@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -58,7 +59,6 @@ namespace P_bils_kiosk
 
                 {
                     ExcelExporter.Export(entry);
-                    MessageBox.Show("Tak fordi du registrerede dine oplysninger. Rigtig god tur, kør forsigtigt.", "Succes", MessageBoxButton.OK, MessageBoxImage.Information);
                     _window.Close();
                 }
 
